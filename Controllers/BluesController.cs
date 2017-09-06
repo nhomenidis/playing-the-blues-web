@@ -33,11 +33,12 @@ namespace PlayingTheBlues.Controllers
             tones.Add("F#");
             tones.Add("C#");
 
+            
             bool check = tones.Contains(tonic); //check if the tone exists in tones list
             if (check)
-            {
+            { 
                 int rootindex, subdomindex, domindex;//variables for the position of I,IV,V chords
-                rootindex = tones.BinarySearch(tonic);//user input as I chord
+                rootindex = tones.IndexOf(tonic);//user input as I chord
                 subdomindex = rootindex - 1;// index of IV chord (thing the cycle of 4ths, counterclockwise)
                 domindex = rootindex + 1;// index of V chord (thing the cycle of 5ths, clockwise)
 
