@@ -28,7 +28,7 @@
         function PlayBlues(){
             var chord = document.getElementById("input_chord").value;
             var request = new XMLHttpRequest();
-            request.open( "GET", "http://localhost:49804/api/blues?tonic="+chord, false );
+            request.open( "GET", "http://localhost:49804/api/blues?tonic="+ encodeURIComponent(chord), false );
             request.send( null );
             var response = request.responseText;
             var chords = JSON.parse(response);
